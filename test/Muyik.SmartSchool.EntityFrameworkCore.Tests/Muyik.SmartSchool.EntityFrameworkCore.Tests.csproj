@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Muyik.SmartSchool</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Muyik.SmartSchool.EntityFrameworkCore\Muyik.SmartSchool.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\Muyik.SmartSchool.Application.Tests\Muyik.SmartSchool.Application.Tests.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="9.2.2" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.13.0" />
+  </ItemGroup>
+
+</Project>

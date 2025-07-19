@@ -1,0 +1,56 @@
+{
+  "id": "6a5ab31f-9639-4942-9c42-c3f8fd3f9335",
+  "template": "app",
+  "versions": {
+    "AbpFramework": "9.2.2",
+    "AbpStudio": "1.1.0",
+    "TargetDotnetFramework": "net9.0"
+  },
+  "modules": {
+    "Muyik.SmartSchool": {
+      "path": "Muyik.SmartSchool.abpmdl"
+    }
+  },
+  "runProfiles": {
+    "Default": {
+      "path": "etc/abp-studio/run-profiles/Default.abprun.json"
+    }
+  },
+  "options": {
+    "httpRequests": {
+      "ignoredUrls": [
+      
+      ]
+    }
+  },
+  "creatingStudioConfiguration": {
+    "template": "app",
+    "createdAbpStudioVersion": "1.1.0",
+    "tiered": "false",
+    "runInstallLibs": "true",
+    "runBundling": "false",
+    "useLocalReferences": "false",
+    "multiTenancy": "false",
+    "includeTests": "true",
+    "kubernetesConfiguration": "false",
+    "uiFramework": "blazor",
+    "mobileFramework": "none",
+    "distributedEventBus": "none",
+    "databaseProvider": "ef",
+    "runDbMigrator": "true",
+    "databaseManagementSystem": "sqlserver",
+    "separateTenantSchema": "false",
+    "createInitialMigration": "true",
+    "theme": "leptonx-lite",
+    "themeStyle": "",
+    "themeMenuPlacement": "",
+    "mobileFramework": "none",
+    "progressiveWebApp": "false",
+    "runProgressiveWebAppSupport": "false",
+    "publicWebsite": "false",
+    "socialLogin": "false",
+    "selectedLanguages": ["English", "Français", ],
+    "defaultLanguage": "English",
+    "createCommand": "abp new Muyik.SmartSchool -t app --ui-framework blazor --database-provider ef --database-management-system sqlserver --theme leptonx-lite --without-cms-kit --dont-run-bundling --no-multi-tenancy --no-social-logins -no-gdpr -no-openiddict-admin-ui -no-audit-logging -no-file-management -no-language-management -no-text-template-management"
+  }
+}
