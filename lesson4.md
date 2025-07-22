@@ -1,4 +1,4 @@
-# Extending ABP.IO User Entity with Custom Properties and Relationships in Blazor WebAssembly
+# Extending ABP.IO User Entity with Custom Properties and Relationships
 
 ## Introduction
 
