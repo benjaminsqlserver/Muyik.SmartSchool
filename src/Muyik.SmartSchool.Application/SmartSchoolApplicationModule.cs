@@ -1,16 +1,20 @@
-﻿using Volo.Abp.PermissionManagement;
-using Volo.Abp.SettingManagement;
+﻿using MediatR;
 using Volo.Abp.Account;
-using Volo.Abp.Identity;
+using Volo.Abp.Application;
 using Volo.Abp.AutoMapper;
 using Volo.Abp.FeatureManagement;
+using Volo.Abp.Identity;
 using Volo.Abp.Modularity;
+using Volo.Abp.PermissionManagement;
+using Volo.Abp.SettingManagement;
 
 namespace Muyik.SmartSchool;
 
 [DependsOn(
-    typeof(SmartSchoolDomainModule),
-    typeof(SmartSchoolApplicationContractsModule),
+     typeof(SmartSchoolDomainModule),
+        typeof(SmartSchoolApplicationContractsModule),
+        typeof(AbpDddApplicationModule),
+        typeof(AbpAutoMapperModule),
     typeof(AbpPermissionManagementApplicationModule),
     typeof(AbpFeatureManagementApplicationModule),
     typeof(AbpIdentityApplicationModule),
@@ -25,5 +29,8 @@ public class SmartSchoolApplicationModule : AbpModule
         {
             options.AddMaps<SmartSchoolApplicationModule>();
         });
+
+        // Register MediatR
+        context.Services.AddMediatR(typeof(SmartSchoolApplicationModule).Assembly);
     }
 }
