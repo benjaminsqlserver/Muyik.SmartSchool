@@ -1,13 +1,32 @@
+// File: Muyik.SmartSchool.Application/SmartSchoolApplicationAutoMapperProfile.cs
+
 using AutoMapper;
+using Muyik.SmartSchool.Users;
+using Muyik.SmartSchool.Users.Dtos;
 
-namespace Muyik.SmartSchool;
-
-public class SmartSchoolApplicationAutoMapperProfile : Profile
+namespace Muyik.SmartSchool
 {
-    public SmartSchoolApplicationAutoMapperProfile()
+    /// <summary>
+    /// Defines AutoMapper mappings for the SmartSchool application layer.
+    /// This profile maps between domain entities and Data Transfer Objects (DTOs)
+    /// used in user-related operations.
+    /// </summary>
+    public class SmartSchoolApplicationAutoMapperProfile : Profile
     {
-        /* You can configure your AutoMapper mapping configuration here.
-         * Alternatively, you can split your mapping configurations
-         * into multiple profile classes for a better organization. */
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SmartSchoolApplicationAutoMapperProfile"/> class
+        /// and configures the object-object mappings used throughout the application layer.
+        /// </summary>
+        public SmartSchoolApplicationAutoMapperProfile()
+        {
+            // Maps AppUser entity to UserDto for reading user data
+            CreateMap<AppUser, UserDto>();
+
+            // Maps CreateUserDto to AppUser entity for creating new users
+            CreateMap<CreateUserDto, AppUser>();
+
+            // Maps UpdateUserDto to AppUser entity for updating existing users
+            CreateMap<UpdateUserDto, AppUser>();
+        }
     }
 }
