@@ -21,7 +21,7 @@ namespace Muyik.SmartSchool.Controllers
     [ApiController]
     [Route("api/app/user")]
     [Authorize]
-    public class UserController : AbpControllerBase
+    public class UserController : SmartSchoolController
     {
         private readonly IUserAppService _userAppService;
         private const long MaxFileSize = 5 * 1024 * 1024; // 5MB
