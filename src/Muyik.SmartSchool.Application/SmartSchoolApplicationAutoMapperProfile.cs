@@ -1,6 +1,9 @@
 // File: Muyik.SmartSchool.Application/SmartSchoolApplicationAutoMapperProfile.cs
 
 using AutoMapper;
+using Muyik.SmartSchool.Entities;
+using Muyik.SmartSchool.Genders.Dtos;
+using Muyik.SmartSchool.SchoolClasses.Dtos;
 using Muyik.SmartSchool.Users;
 using Muyik.SmartSchool.Users.Dtos;
 
@@ -27,6 +30,18 @@ namespace Muyik.SmartSchool
 
             // Maps UpdateUserDto to AppUser entity for updating existing users
             CreateMap<UpdateUserDto, AppUser>();
+
+
+            // SchoolClass mappings
+            CreateMap<SchoolClass, SchoolClassDto>();
+            CreateMap<CreateSchoolClassDto, SchoolClass>();
+            CreateMap<UpdateSchoolClassDto, SchoolClass>();
+
+            // Gender mappings
+            CreateMap<Gender, GenderDto>();
+            CreateMap<CreateGenderDto, Gender>();
+            CreateMap<UpdateGenderDto, Gender>();
+
         }
     }
 }

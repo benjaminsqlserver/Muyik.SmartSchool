@@ -11,6 +11,7 @@ using Volo.Abp.SettingManagement;
 namespace Muyik.SmartSchool;
 
 [DependsOn(
+     
      typeof(SmartSchoolDomainModule),
         typeof(SmartSchoolApplicationContractsModule),
         typeof(AbpDddApplicationModule),
@@ -32,5 +33,8 @@ public class SmartSchoolApplicationModule : AbpModule
 
         // Register MediatR
         context.Services.AddMediatR(typeof(SmartSchoolApplicationModule).Assembly);
+
+        // Register MediatR - this is the correct way
+       // context.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(SmartSchoolApplicationModule).Assembly));
     }
 }
